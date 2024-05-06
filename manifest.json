@@ -1,0 +1,35 @@
+{
+    "manifest_version": 2,
+    "name": "Tab Tracker",
+    "version": "1.0",
+    "description": "Track time spent on each tab",
+    "permissions": ["tabs", "activeTab"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "icons/icon16.jpg",
+        "48": "icons/icon48.jpg",
+        "128": "icons/icon128.jpg"
+      }
+    },
+    "icons": {
+      "16": "icons/icon16.jpg",
+      "48": "icons/icon48.jpg",
+      "128": "icons/icon128.jpg"
+    },
+    "permissions": [
+      "storage",
+      "activeTab"
+    ]
+  }
+  
